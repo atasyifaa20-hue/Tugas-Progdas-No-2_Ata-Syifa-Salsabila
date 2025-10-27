@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cmath> 
+using namespace std;
+
+//Fungsi untuk menghitung jarak dua titik
+double distance(double x1, double y1, double x2, double y2) {
+    return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+}
+
+//Fungsi untuk radius
+double radius(double xCenter, double yCenter, double xPoint, double yPoint) {
+    return distance(xCenter, yCenter, xPoint, yPoint);
+}
+
+//Fungsi untuk menghitung keliling lingkaran
+double circumference(double r) {
+    return 2 * 3.1416 * r;
+}
+
+//Fungsi untuk menghitung luas lingkaran
+double area(double r) {
+    return 3.1416 * r * r;
+}
+
+int main() {
+    double x1, y1, x2, y2;
+    cout << "Masukkan x pusat: "; cin >> x1;
+    cout << "Masukkan y pusat: "; cin >> y1;
+    cout << "Masukkan x titik lingkaran: "; cin >> x2;
+    cout << "Masukkan y titik lingkaran: "; cin >> y2;
+    double r = distance(x1, y1, x2, y2);
+    cout << "Radius     : " << r << endl;
+    cout << "Diameter   : " << 2*r << endl;
+    cout << "Keliling   : " << circumference(r) << endl;
+    cout << "Luas       : " << area(r) << endl;
+    return 0;
+}
